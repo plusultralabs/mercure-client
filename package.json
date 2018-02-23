@@ -1,0 +1,76 @@
+{
+  "name": "mercure-client",
+  "version": "1.0.0",
+  "description": "a client for the mercure notification system",
+  "main": "build/index",
+  "types": "build/index",
+  "scripts": {
+    "build": "tsc",
+    "bundle": "rollup -c",
+    "bundle:post": "browserify dist/index.js -o dist/bundle.js",
+    "bundle:postMin": "browserify dist/index.js | uglifyjs > dist/bundle.min.js",
+    "prepublish": "npm-run-all build bundle bundle:post bundle:postMin",
+    "test": "jest"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/preprocessor.js"
+    },
+    "testMatch": [
+      "**/__tests__/*.(ts|tsx|js)"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plusultralabs/mercure-client.git"
+  },
+  "keywords": [
+    "mercure",
+    "crypto",
+    "ethereum",
+    "web3",
+    "email",
+    "sms"
+  ],
+  "author": "plusultralabs",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "bugs": {
+    "url": "https://github.com/plusultralabs/mercure-client/issues"
+  },
+  "homepage": "https://github.com/plusultralabs/mercure-client#readme",
+  "devDependencies": {
+    "@types/jest": "^22.1.3",
+    "@types/node": "^9.4.6",
+    "browserify": "^16.1.0",
+    "jest": "^22.4.0",
+    "npm-run-all": "^4.1.2",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.56.2",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "^1.1.0",
+    "typescript": "^2.7.2",
+    "uglify-js": "^3.3.12"
+  },
+  "dependencies": {
+    "bufferutil": "^3.0.3",
+    "cryptium": "^0.2.1",
+    "rollup-plugin-commonjs": "^8.3.0",
+    "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-node-resolve": "^3.0.3",
+    "tslib": "^1.9.0",
+    "utf-8-validate": "^4.0.0",
+    "web3": "^1.0.0-beta.30",
+    "web3-typescript-typings": "^0.9.11"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "commonjs",
+    "declaration": true,
+    "outDir": "./build",
+    "moduleResolution": "node",
+    "lib": [
+          "dom",
+          "dom.iterable",
+          "es5",
+          "es2015",
+          "scripthost"
+        ]
+  },
+  "include": [
+    "src/**/*",
+    "node_modules/@types",
+    "typings.d.ts",
+    "./node_modules/web3-typescript-typings/index.d.ts"
+  ],
+  "exclude": ["./**/__tests__", "node_modules","./dist","./build"]
+}
