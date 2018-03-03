@@ -33,6 +33,9 @@ module.exports = {
             include: /\.min\.js$/,
         }),
     ],
+    node: {
+        console: true
+    },
     module: {
         rules: [
             {

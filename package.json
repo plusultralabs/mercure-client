@@ -2,8 +2,8 @@
   "name": "mercure-client",
   "version": "1.0.0",
   "description": "a client for the mercure notification system",
-  "main": "build/index",
-  "types": "build/index",
+  "main": "dist/index",
+  "types": "lib/index",
   "scripts": {
     "build": "tsc",
     "bundle": "NODE_ENV=production webpack",
@@ -22,6 +22,7 @@
       "json",
       "node"
     ],
+    "collectCoverage":true,
     "testMatch": [
       "**/__tests__/*.(js)"
     ]

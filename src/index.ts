@@ -1,7 +1,6 @@
 import loadContract from "./utils/notify"
 import getWeb3 from './utils/getWeb3'
 import { getProvider , Action} from "./utils/providers";
-import { assert } from "console";
 
 const PHONENUMBER = /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/
 
@@ -37,7 +36,7 @@ export async function sendSmsNotification(phoneNumber:string,content:string,opti
 }
 
 function validateSms(sms:string){
-    assert(PHONENUMBER.test(sms))
+    if(!PHONENUMBER.test(sms)) throw new Error('invalid phone number')
 }
 
 export default {loadContract}
