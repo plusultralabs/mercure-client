@@ -39,11 +39,10 @@ async function encryption(fn:Formater){
 async function nominal(fn:Formater){
     return async function(_to:string, _content:string){
         const content = fn.getFormatedContent(_content)
-        const to = fn.getFormatedTo(_to)
-        return {content,destination:to}
+        const destination = fn.getFormatedTo(_to)
+        return {content,destination}
     }  
 }
-
 
 export function getProvider(kind:Action, encrypted:boolean = true){
     const baseProvider = getBaseProvider(kind);
